@@ -12,6 +12,7 @@ public class AbstractTest {
 
     protected List<Product> listOfProducts;
     protected ShoppingCart cart;
+    protected UserAccount user;
 
     @BeforeEach
     protected void generateTestData() {
@@ -20,6 +21,7 @@ public class AbstractTest {
             listOfProducts.add(generateProduct(i));
         }
         cart = new ShoppingCart(listOfProducts);
+        user = generateUserAccount();
     }
 
     protected Product generateProduct(int id) {
@@ -41,8 +43,9 @@ public class AbstractTest {
     }
 
     @AfterEach
-    protected void killProductsList() {
+    protected void killInstances() {
         listOfProducts = null;
         cart = null;
+        user = null;
     }
 }
