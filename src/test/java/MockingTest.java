@@ -22,8 +22,8 @@ class MockingTest extends AbstractTest {
     @Test
     void checkDiscountUtility() {
         double returnedDiscount = 3.0;
-        double totalPriceInCartBefore = user.getShoppingCart().getCartTotalPrice();
         UserAccount user = generateUserAccount();
+        double totalPriceInCartBefore = user.getShoppingCart().getCartTotalPrice();
 
         Mockito.when(discountUtility.calculateDiscount(user)).thenReturn(returnedDiscount);
         assertEquals(totalPriceInCartBefore - returnedDiscount, orderService.getOrderPrice(user));
