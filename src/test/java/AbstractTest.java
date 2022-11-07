@@ -35,9 +35,9 @@ public class AbstractTest {
 
     protected UserAccount generateUserAccount() {
         UserAccount user = new UserAccount();
-        user.setName(UUID.randomUUID().toString());
-        user.setSurname("Ivanov");
-        user.setDateOfBirth("1999-01-01");
+        user.setName("John");
+        user.setSurname("Smith");
+        user.setDateOfBirth("1990-10-10");
         user.setShoppingCart(cart);
         return user;
     }
